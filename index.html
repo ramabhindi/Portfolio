@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name — GBDA Portfolio</title>
+  <title>Rama Bhindi — Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 </head>
 <body>
 
   <!-- NAV -->
   <nav class="nav">
-    <span class="nav-logo">YourName.ca</span>
+    <span class="nav-logo">RB</span>
     <div class="nav-links">
       <a href="#work">Work</a>
       <a href="#about">About</a>
@@ -34,54 +35,126 @@
 
   <!-- DISCIPLINES BAR -->
   <div class="disciplines">
-    <div class="disc"><p class="disc-num">01</p><p class="disc-name">Graphic Design</p></div>
-    <div class="disc"><p class="disc-num">02</p><p class="disc-name">UX / UI</p></div>
-    <div class="disc"><p class="disc-num">03</p><p class="disc-name">Motion</p></div>
+    <div class="disc"><p class="disc-num">01</p><p class="disc-name">Brand Design</p></div>
+    <div class="disc"><p class="disc-num">02</p><p class="disc-name">Illustration</p></div>
+    <div class="disc"><p class="disc-num">03</p><p class="disc-name">Social Media</p></div>
     <div class="disc"><p class="disc-num">04</p><p class="disc-name">Photo</p></div>
-    <div class="disc"><p class="disc-num">05</p><p class="disc-name">Social</p></div>
+    <div class="disc"><p class="disc-num">05</p><p class="disc-name">Motion</p></div>
   </div>
 
-  <!-- WORK -->
-  <section class="work-section" id="work">
-    <div class="work-header">
-      <h2>Work</h2>
-      <span>Selected projects</span>
-    </div>
-    <div class="project-list">
-      <div class="project-row">
-        <span class="proj-num">001</span>
-        <div class="proj-info">
-          <h3>Brand Overhaul</h3>
-          <p>Identity system for a student-run startup</p>
-        </div>
-        <p class="proj-tag" style="color:#534AB7;">Graphic ↗</p>
+  <!-- ═══════════════════════════════════════ WORK ═══════════════════════════════════════ -->
+  <main id="work">
+
+    <!-- ── GROUP 1: BRAND DESIGN ── -->
+    <section class="work-group" id="group-brand">
+      <div class="group-header">
+        <span class="group-num">01</span>
+        <h2 class="group-title">Brand Design</h2>
       </div>
-      <div class="project-row">
-        <span class="proj-num">002</span>
-        <div class="proj-info">
-          <h3>App Redesign</h3>
-          <p>UX overhaul of a campus events app</p>
+      <div class="thumb-grid">
+
+        <div class="thumb-card" data-overlay="overlay-cravory">
+          <div class="thumb-img-wrap">
+            <img src="MOCKUP_LANDING.jpg" alt="Cravory website">
+            <div class="thumb-hover"><span class="see-more-text">See More →</span></div>
+          </div>
+          <div class="thumb-label">
+            <p class="thumb-name">Cravory</p>
+            <p class="thumb-sub">Restaurant Website Redesign</p>
+          </div>
         </div>
-        <p class="proj-tag" style="color:#0F6E56;">UI/UX ↗</p>
-      </div>
-      <div class="project-row">
-        <span class="proj-num">003</span>
-        <div class="proj-info">
-          <h3>Opening Titles</h3>
-          <p>Motion sequence for a short film festival</p>
+
+        <div class="thumb-card" data-overlay="overlay-sweetstuff">
+          <div class="thumb-img-wrap">
+            <img src="sweetstuffcans.png" alt="Sweet Stuff cans">
+            <div class="thumb-hover"><span class="see-more-text">See More →</span></div>
+          </div>
+          <div class="thumb-label">
+            <p class="thumb-name">Smirnoff Berry Blast</p>
+            <p class="thumb-sub">Beverage Redesign</p>
+          </div>
         </div>
-        <p class="proj-tag" style="color:#993C1D;">Motion ↗</p>
+
       </div>
-      <div class="project-row">
-        <span class="proj-num">004</span>
-        <div class="proj-info">
-          <h3>Photo Series</h3>
-          <p>Documentary portrait work, Waterloo Region</p>
+    </section>
+
+    <!-- ── GROUP 2: ILLUSTRATION & ANIMATION ── -->
+    <section class="work-group work-group--dark" id="group-illustration">
+      <div class="group-header">
+        <span class="group-num">02</span>
+        <h2 class="group-title">Illustration &amp; Animation</h2>
+      </div>
+      <div class="carousel-viewport" id="illus-carousel">
+        <div class="carousel-track" id="illus-track"></div>
+      </div>
+      <div class="carousel-info" id="illus-info">
+        <p class="carousel-card-title" id="illus-title">—</p>
+        <p class="carousel-card-desc" id="illus-desc">—</p>
+      </div>
+    </section>
+
+    <!-- ── GROUP 3: SOCIAL MEDIA ── -->
+    <section class="work-group" id="group-social">
+      <div class="group-header">
+        <span class="group-num">03</span>
+        <h2 class="group-title">Social Media</h2>
+      </div>
+      <div class="thumb-grid thumb-grid--3">
+
+        <div class="thumb-card has-video-preview" data-overlay="overlay-doopy">
+          <div class="thumb-img-wrap" style="background:#0d0d0d;">
+            <video class="thumb-preview-video" src="militiarydoop.mp4" muted loop playsinline preload="none"></video>
+            <span class="placeholder-initials">DS</span>
+            <div class="thumb-hover"><span class="see-more-text">See More →</span></div>
+          </div>
+          <div class="thumb-label">
+            <p class="thumb-name">DoopyStudios</p>
+            <p class="thumb-sub">Animated Shorts</p>
+          </div>
         </div>
-        <p class="proj-tag" style="color:#993556;">Photo ↗</p>
+
+        <div class="thumb-card" data-overlay="overlay-rblocks">
+          <div class="thumb-img-wrap thumb-placeholder" style="--ph-bg:#071625;">
+            <span class="placeholder-initials">RB</span>
+            <div class="thumb-hover"><span class="see-more-text">See More →</span></div>
+          </div>
+          <div class="thumb-label">
+            <p class="thumb-name">RBLocks</p>
+            <p class="thumb-sub">Sports Commentary &amp; Analysis</p>
+          </div>
+        </div>
+
+        <div class="thumb-card has-video-preview" data-overlay="overlay-sixstar">
+          <div class="thumb-img-wrap" style="background:#1a0808;">
+            <video class="thumb-preview-video" src="globalwarmingvideo.mp4" muted loop playsinline preload="none"></video>
+            <span class="placeholder-initials">6★</span>
+            <div class="thumb-hover"><span class="see-more-text">See More →</span></div>
+          </div>
+          <div class="thumb-label">
+            <p class="thumb-name">SixStarMedia</p>
+            <p class="thumb-sub">Various Media Projects</p>
+          </div>
+        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ── GROUP 4: PHOTOGRAPHY ── -->
+    <section class="work-group work-group--dark" id="group-photo">
+      <div class="group-header">
+        <span class="group-num">04</span>
+        <h2 class="group-title">Photography</h2>
+      </div>
+      <div class="carousel-viewport" id="photo-carousel">
+        <div class="carousel-track" id="photo-track"></div>
+      </div>
+      <div class="carousel-info" id="photo-info">
+        <p class="carousel-card-title" id="photo-title">—</p>
+        <p class="carousel-card-desc" id="photo-desc">—</p>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ABOUT + TOOLS -->
   <section class="color-block" id="about">
@@ -103,15 +176,146 @@
     </div>
   </section>
 
-  <!-- FOOTER / CONTACT -->
+  <!-- FOOTER -->
   <footer class="footer" id="contact">
-    <span class="footer-name">Your Name</span>
+    <span class="footer-name">Rama Bhindi</span>
     <div class="footer-links">
-      <a href="mailto:you@example.com" class="footer-link">Email</a>
+      <a href="mailto:ramabhindi21@gmail.com" class="footer-link">Email</a>
       <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
       <a href="https://instagram.com" target="_blank" class="footer-link">IG</a>
     </div>
   </footer>
+
+  <!-- ═══════════════════════ PROJECT OVERLAYS ═══════════════════════ -->
+
+  <!-- Cravory -->
+  <div class="proj-overlay" id="overlay-cravory">
+    <div class="overlay-topbar">
+      <button class="overlay-back">← Back</button>
+      <div class="overlay-meta">
+        <h2>Cravory</h2>
+        <p>Restaurant Website Redesign</p>
+      </div>
+    </div>
+    <div class="overlay-stage">
+      <div class="overlay-slides" data-index="0">
+        <div class="overlay-slide is-active"><img src="MOCKUP_LANDING.jpg" alt="Landing page"></div>
+        <div class="overlay-slide"><img src="MOCKUP_CONTACT.jpg" alt="Contact page"></div>
+      </div>
+      <button class="slide-arrow slide-arrow--prev">&#8592;</button>
+      <button class="slide-arrow slide-arrow--next">&#8594;</button>
+      <div class="slide-counter"><span class="sc-cur">1</span><span class="sc-sep"> / </span><span class="sc-tot">2</span></div>
+    </div>
+  </div>
+
+  <!-- Sweet Stuff -->
+  <div class="proj-overlay" id="overlay-sweetstuff">
+    <div class="overlay-topbar">
+      <button class="overlay-back">← Back</button>
+      <div class="overlay-meta">
+        <h2>Smirnoff Berry Blast</h2>
+        <p>Beverage Redesign</p>
+      </div>
+    </div>
+    <div class="overlay-stage">
+      <div class="overlay-slides" id="sweetstuff-slides">
+        <div class="overlay-slide is-active"><img src="sweetstuffcans.png" alt="Sweet Stuff cans"></div>
+        <div class="overlay-slide pdf-loading-slide" id="pdf-loading-slot">
+          <div class="pdf-loading"><p>Loading presentation…</p></div>
+        </div>
+      </div>
+      <button class="slide-arrow slide-arrow--prev">&#8592;</button>
+      <button class="slide-arrow slide-arrow--next">&#8594;</button>
+      <div class="slide-counter"><span class="sc-cur">1</span><span class="sc-sep"> / </span><span class="sc-tot">…</span></div>
+    </div>
+  </div>
+
+  <!-- DoopyStudios -->
+  <div class="proj-overlay" id="overlay-doopy">
+    <div class="overlay-topbar">
+      <button class="overlay-back">← Back</button>
+      <div class="overlay-meta">
+        <h2>DoopyStudios</h2>
+        <p>Animated Shorts</p>
+      </div>
+    </div>
+    <div class="overlay-stage">
+      <div class="overlay-slides">
+        <div class="overlay-slide is-active has-caption">
+          <div class="slide-media">
+            <video src="militiarydoop.mp4" controls loop playsinline></video>
+          </div>
+          <div class="slide-caption">
+            <h3>Doopy Throws a Grenade</h3>
+            <p>An animated comedy short made to drive engagement with humour. Made in less than 24 hours.</p>
+          </div>
+        </div>
+        <div class="overlay-slide has-caption">
+          <div class="slide-media">
+            <video src="doopyridge.mp4" controls loop playsinline></video>
+          </div>
+          <div class="slide-caption">
+            <h3>Doopy Ridge Wallet Advert</h3>
+            <p>An animated advertisement made as per RidgeWallet's request. The video aired on Doopy's social media page and was commissioned for.</p>
+          </div>
+        </div>
+      </div>
+      <button class="slide-arrow slide-arrow--prev">&#8592;</button>
+      <button class="slide-arrow slide-arrow--next">&#8594;</button>
+      <div class="slide-counter"><span class="sc-cur">1</span><span class="sc-sep"> / </span><span class="sc-tot">2</span></div>
+    </div>
+  </div>
+
+  <!-- RBLocks -->
+  <div class="proj-overlay" id="overlay-rblocks">
+    <div class="overlay-topbar">
+      <button class="overlay-back">← Back</button>
+      <div class="overlay-meta">
+        <h2>RBLocks</h2>
+        <p>Sports Commentary &amp; Analysis</p>
+      </div>
+    </div>
+    <div class="overlay-stage overlay-stage--figma">
+      <div class="figma-embed-wrap">
+        <iframe
+          src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/IAaWoqkOv15wAO2a2MUOOs/hi-res-mockups%3Fnode-id%3D0-1%26t%3DcJmelEqln6BNq09b-1"
+          allowfullscreen
+          title="MMA Tier List Dictionary"
+        ></iframe>
+      </div>
+      <div class="figma-meta">
+        <p class="figma-label">MMA Tier List Dictionary — Fighter rankings &amp; next-fight predictions</p>
+        <a href="https://www.figma.com/proto/IAaWoqkOv15wAO2a2MUOOs/hi-res-mockups?node-id=0-1&t=cJmelEqln6BNq09b-1" target="_blank" class="figma-open-link">Open in Figma ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SixStarMedia -->
+  <div class="proj-overlay" id="overlay-sixstar">
+    <div class="overlay-topbar">
+      <button class="overlay-back">← Back</button>
+      <div class="overlay-meta">
+        <h2>SixStarMedia</h2>
+        <p>Various Media Projects</p>
+      </div>
+    </div>
+    <div class="overlay-stage">
+      <div class="overlay-slides">
+        <div class="overlay-slide is-active has-caption">
+          <div class="slide-media">
+            <video src="globalwarmingvideo.mp4" controls loop playsinline></video>
+          </div>
+          <div class="slide-caption">
+            <h3>Global Warming Animation</h3>
+            <p>A short animated video made to show the dangers of global warming.</p>
+          </div>
+        </div>
+      </div>
+      <button class="slide-arrow slide-arrow--prev">&#8592;</button>
+      <button class="slide-arrow slide-arrow--next">&#8594;</button>
+      <div class="slide-counter"><span class="sc-cur">1</span><span class="sc-sep"> / </span><span class="sc-tot">1</span></div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
