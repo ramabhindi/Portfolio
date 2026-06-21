@@ -1,13 +1,25 @@
 // ═══════════════════════════════════════════════════════
 //  HERO — split letters
 // ═══════════════════════════════════════════════════════
+let letterIdx = 0;
 document.querySelectorAll('#hero-title .word').forEach(word => {
   const text = word.getAttribute('data-text');
-  word.innerHTML = text.split('').map(ch =>
-    ch === ' '
-      ? '<span style="display:inline-block;width:0.28em"> </span>'
-      : `<span class="letter">${ch}</span>`
-  ).join('');
+  word.innerHTML = text.split('').map(ch => {
+    if (ch === ' ') {
+      letterIdx++;
+      return '<span style="display:inline-block;width:0.28em"> </span>';
+    }
+    const delay = 80 + letterIdx * 65;
+    letterIdx++;
+    return `<span class="letter" style="animation-delay:${delay}ms">${ch}</span>`;
+  }).join('');
+});
+
+// Once each letter's intro animation ends, remove it so hover transform works freely
+document.querySelectorAll('#hero-title .letter').forEach(letter => {
+  letter.addEventListener('animationend', () => {
+    letter.style.animation = 'none';
+  }, { once: true });
 });
 
 // ═══════════════════════════════════════════════════════
@@ -174,13 +186,40 @@ const illustrations = [
 
 // Photography data
 const photos = [
-  { src: 'landscape.jpg', title: 'Stratford', desc: 'Downtown Stratford, Ontario — summer afternoon.' },
-  { src: 'MACRO.jpg',     title: 'Macro',     desc: 'Close-up study — texture and light.' },
-  { src: 'product.jpg',   title: 'Product',   desc: 'Product photography — clean and deliberate.' },
+  { src: 'landscape.jpg',  title: 'Stratford', desc: 'Downtown Stratford, Ontario — summer afternoon.' },
+  { src: 'Doglokes.jpg',   title: 'Doglokes',  desc: 'Candid portrait — caught mid-howl in the afternoon sun.' },
+  { src: 'Hasan.jpg',      title: 'Hasan',     desc: 'Portrait — natural light, candid moment.' },
+  { src: 'MACRO.JPG',      title: 'Macro',     desc: 'Close-up study — texture and light.' },
+  { src: 'PRODUCT.JPG',    title: 'Product',   desc: 'Product photography — clean and deliberate.' },
 ];
 
 new PhysicsCarousel({ viewportId: 'illus-carousel', trackId: 'illus-track', titleId: 'illus-title', descId: 'illus-desc', items: illustrations });
 new PhysicsCarousel({ viewportId: 'photo-carousel', trackId: 'photo-track', titleId: 'photo-title', descId: 'photo-desc', items: photos });
+
+// ═══════════════════════════════════════════════════════
+//  PERSONAL SECTION — rotating blurbs
+// ═══════════════════════════════════════════════════════
+(function () {
+  const blurbs = document.querySelectorAll('.blurb');
+  const dots   = document.querySelectorAll('.bdot');
+  if (!blurbs.length) return;
+
+  let current = 0;
+
+  function goTo(index) {
+    blurbs[current].classList.remove('is-active');
+    dots[current].classList.remove('is-active');
+    current = index;
+    blurbs[current].classList.add('is-active');
+    dots[current].classList.add('is-active');
+  }
+
+  // Dot clicks
+  dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+  // Auto-rotate every 4.5 seconds
+  setInterval(() => goTo((current + 1) % blurbs.length), 4500);
+})();
 
 // ═══════════════════════════════════════════════════════
 //  VIDEO HOVER PREVIEWS

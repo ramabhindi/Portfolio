@@ -21,15 +21,22 @@
 
   <!-- HERO -->
   <section class="hero">
-    <p class="hero-eyebrow">GBDA · University of Waterloo · 2025</p>
-    <h1 class="hero-title" id="hero-title">
-      <span class="word" data-text="I MAKE"></span>
-      <span class="word line2" data-text="THINGS"></span>
-      <span class="word line3" data-text="MOVE."></span>
-    </h1>
-    <div class="hero-bottom">
-      <p class="hero-desc">Graphic design, motion, UI/UX, photography & social — GBDA student who builds work that gets noticed.</p>
-      <a href="#work" class="hero-cta">See the work ↓</a>
+    <div class="hero-left">
+      <p class="hero-eyebrow">GBDA · University of Waterloo · 2025</p>
+      <h1 class="hero-title" id="hero-title">
+        <span class="word" data-text="I MAKE"></span>
+        <span class="word line2" data-text="THINGS"></span>
+        <span class="word line3" data-text="MOVE."></span>
+      </h1>
+      <div class="hero-bottom">
+        <p class="hero-desc">Graphic design, motion, UI/UX, photography & social — GBDA student who builds work that gets noticed.</p>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-headshot-wrap">
+        <img src="removedbgheadshot.png" class="hero-headshot" alt="Rama Bhindi">
+      </div>
+      <a href="#work" class="hero-cta hero-cta--overlay">See the work ↓</a>
     </div>
   </section>
 
@@ -156,6 +163,28 @@
 
   </main>
 
+  <!-- ── ABOUT / PERSONAL ── -->
+  <section class="personal-section" id="personal">
+    <div class="personal-photo">
+      <img src="Doglokes.jpg" alt="About photo" id="personal-photo-img">
+    </div>
+    <div class="personal-text">
+      <p class="personal-eyebrow">About</p>
+      <div class="blurb-wrap" id="blurb-wrap">
+        <p class="blurb is-active" data-group="0">Placeholder text — group 1, sentence 1. Placeholder text — group 1, sentence 2. Placeholder text — group 1, sentence 3.</p>
+        <p class="blurb" data-group="1">Placeholder text — group 2, sentence 1. Placeholder text — group 2, sentence 2. Placeholder text — group 2, sentence 3.</p>
+        <p class="blurb" data-group="2">Placeholder text — group 3, sentence 1. Placeholder text — group 3, sentence 2. Placeholder text — group 3, sentence 3.</p>
+        <p class="blurb" data-group="3">Placeholder text — group 4, sentence 1. Placeholder text — group 4, sentence 2. Placeholder text — group 4, sentence 3.</p>
+      </div>
+      <div class="blurb-dots" id="blurb-dots">
+        <span class="bdot is-active"></span>
+        <span class="bdot"></span>
+        <span class="bdot"></span>
+        <span class="bdot"></span>
+      </div>
+    </div>
+  </section>
+
   <!-- ABOUT + TOOLS -->
   <section class="color-block" id="about">
     <div class="cb-left">
@@ -182,14 +211,14 @@
     <div class="footer-links">
       <a href="mailto:ramabhindi21@gmail.com" class="footer-link">Email</a>
       <a href="https://linkedin.com" target="_blank" class="footer-link">LinkedIn</a>
-      <a href="https://instagram.com" target="_blank" class="footer-link">IG</a>
+      <a href="Portfolioresume.pdf" target="_blank" class="footer-link">Resume</a>
     </div>
   </footer>
 
   <!-- ═══════════════════════ PROJECT OVERLAYS ═══════════════════════ -->
 
   <!-- Cravory -->
-  <div class="proj-overlay" id="overlay-cravory">
+  <div class="proj-overlay proj-overlay--case-study" id="overlay-cravory">
     <div class="overlay-topbar">
       <button class="overlay-back">← Back</button>
       <div class="overlay-meta">
@@ -197,14 +226,20 @@
         <p>Restaurant Website Redesign</p>
       </div>
     </div>
-    <div class="overlay-stage">
-      <div class="overlay-slides" data-index="0">
-        <div class="overlay-slide is-active"><img src="MOCKUP_LANDING.jpg" alt="Landing page"></div>
-        <div class="overlay-slide"><img src="MOCKUP_CONTACT.jpg" alt="Contact page"></div>
+    <div class="case-study-body">
+      <div class="case-study-text">
+        <p class="case-label">Design Rationale</p>
+        <p>This redesign of Cravory's website focuses on improving usability, visual appeal, and content presentation. Through my analysis of the original website, I identified several issues, including a lack of food imagery, inefficient use of space, inconsistent visual design, and a menu page that was difficult to browse.</p>
+        <p>To address these problems, I redesigned the landing page to feature high-quality food photography that better aligns with users' expectations when visiting a restaurant website. I also reorganized content to make better use of available space while maintaining readability and visual balance. The design was created with responsiveness in mind, ensuring a seamless experience across desktop and mobile devices without requiring horizontal scrolling.</p>
+        <p>The visual identity was refreshed through the use of green and off-white tones to communicate freshness, quality, and cleanliness while reducing the empty feeling created by large white spaces in the original design. The menu page received the most significant redesign, incorporating consistent typography, improved organization, and stronger visual hierarchy. Finally, I introduced an About page to preserve and highlight the restaurant's story, values, and emphasis on fresh ingredients and culinary expertise.</p>
+        <p>Overall, the redesign creates a more engaging and user-friendly experience that better showcases Cravory's offerings and encourages customers to make reservations.</p>
       </div>
-      <button class="slide-arrow slide-arrow--prev">&#8592;</button>
-      <button class="slide-arrow slide-arrow--next">&#8594;</button>
-      <div class="slide-counter"><span class="sc-cur">1</span><span class="sc-sep"> / </span><span class="sc-tot">2</span></div>
+      <div class="case-study-images">
+        <img src="MOCKUP_LANDING.jpg" alt="Landing page redesign">
+        <img src="MOCKUP_ABOUT.jpg" alt="About page redesign">
+        <img src="MOCKUP_MENU.jpg" alt="Menu page redesign">
+        <img src="MOCKUP_CONTACT.jpg" alt="Contact page redesign">
+      </div>
     </div>
   </div>
 
