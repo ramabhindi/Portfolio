@@ -182,24 +182,29 @@ const illustrations = [
   { src: 'space.png',             title: 'Space',              desc: 'Pop-art silhouette portrait with bold stained glass geometry.' },
   { src: 'lmdoopcover.png',       title: 'LMDOOP',             desc: 'Figure drifting through a purple planetary dreamscape.' },
   { src: 'fallingmoon.jpg',       title: 'Falling Moon',       desc: 'Freefall in the cosmos against a glowing full moon.' },
+  { src: 'yours truly.jpg',       title: 'Yours Truly',        desc: 'A cinematic silhouette — smoke, red, and attitude in a parked car.' },
+  { src: 'mona lisa.jpg',         title: 'Mona Lisa',          desc: 'A reimagining of the iconic painting — vandalized, spotlit, and questioned.' },
+  { src: 'voodoo.jpg',            title: 'Voodoo',             desc: 'A voodoo doll in a lived-in room — detail-rich and darkly playful.' },
 ];
 
 // Photography data
 const photos = [
-  { src: 'landscape.jpg',  title: 'Stratford', desc: 'Downtown Stratford, Ontario — summer afternoon.' },
-  { src: 'Doglokes.jpg',   title: 'Doglokes',  desc: 'Candid portrait — caught mid-howl in the afternoon sun.' },
-  { src: 'Hasan.jpg',      title: 'Hasan',     desc: 'Portrait — natural light, candid moment.' },
-  { src: 'MACRO.JPG',      title: 'Macro',     desc: 'Close-up study — texture and light.' },
-  { src: 'PRODUCT.JPG',    title: 'Product',   desc: 'Product photography — clean and deliberate.' },
+  { src: 'landscape.jpg',      title: 'Stratford',        desc: 'Downtown Stratford, Ontario — summer afternoon.' },
+  { src: 'Doglokes.jpg',       title: 'Doglokes',         desc: 'Candid portrait — caught mid-howl in the afternoon sun.' },
+  { src: 'Hasan.jpg',          title: 'Hasan',            desc: 'Portrait — natural light, candid moment.' },
+  { src: 'MACRO.JPG',          title: 'Macro',            desc: 'Close-up study — texture and light.' },
+  { src: 'PRODUCT.JPG',        title: 'Product',          desc: 'Product photography — clean and deliberate.' },
+  { src: 'StatuesinStrat.jpg', title: 'Statues in Strat', desc: 'War memorial and Canadian flag — Stratford, Ontario.' },
 ];
 
 new PhysicsCarousel({ viewportId: 'illus-carousel', trackId: 'illus-track', titleId: 'illus-title', descId: 'illus-desc', items: illustrations });
 new PhysicsCarousel({ viewportId: 'photo-carousel', trackId: 'photo-track', titleId: 'photo-title', descId: 'photo-desc', items: photos });
 
 // ═══════════════════════════════════════════════════════
-//  PERSONAL SECTION — rotating blurbs
+//  PERSONAL SECTION — synced photo + text rotation
 // ═══════════════════════════════════════════════════════
 (function () {
+  const photos = document.querySelectorAll('.about-photo');
   const blurbs = document.querySelectorAll('.blurb');
   const dots   = document.querySelectorAll('.bdot');
   if (!blurbs.length) return;
@@ -207,9 +212,11 @@ new PhysicsCarousel({ viewportId: 'photo-carousel', trackId: 'photo-track', titl
   let current = 0;
 
   function goTo(index) {
+    photos[current].classList.remove('is-active');
     blurbs[current].classList.remove('is-active');
     dots[current].classList.remove('is-active');
     current = index;
+    photos[current].classList.add('is-active');
     blurbs[current].classList.add('is-active');
     dots[current].classList.add('is-active');
   }
@@ -217,8 +224,8 @@ new PhysicsCarousel({ viewportId: 'photo-carousel', trackId: 'photo-track', titl
   // Dot clicks
   dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
 
-  // Auto-rotate every 4.5 seconds
-  setInterval(() => goTo((current + 1) % blurbs.length), 4500);
+  // Auto-rotate every 15 seconds
+  setInterval(() => goTo((current + 1) % blurbs.length), 15000);
 })();
 
 // ═══════════════════════════════════════════════════════
