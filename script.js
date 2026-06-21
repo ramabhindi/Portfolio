@@ -1,4 +1,14 @@
 // ═══════════════════════════════════════════════════════
+//  NAV — fade on scroll
+// ═══════════════════════════════════════════════════════
+(function () {
+  const nav = document.querySelector('.nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('is-scrolled', window.scrollY > 40);
+  }, { passive: true });
+})();
+
+// ═══════════════════════════════════════════════════════
 //  HERO — split letters
 // ═══════════════════════════════════════════════════════
 let letterIdx = 0;
