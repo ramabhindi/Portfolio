@@ -33,7 +33,7 @@ body {
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
-.nav-links { display: flex; gap: 2rem; }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
 .nav-links a {
   font-size: 11px;
   text-transform: uppercase;
@@ -173,7 +173,7 @@ body {
 /* ===== DISCIPLINES BAR ===== */
 .disciplines {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   border-top: 2px solid #0a0a0a;
   border-bottom: 2px solid #0a0a0a;
 }
@@ -951,10 +951,10 @@ body {
   .case-study-body { grid-template-columns: 1fr; }
   .case-study-text { position: static; }
 
-  .disciplines { grid-template-columns: repeat(3, 1fr); }
-  .disc:nth-child(3) { border-right: none; }
-  .disc:nth-child(4) { border-top: 2px solid #0a0a0a; }
-  .disc:nth-child(5) { border-top: 2px solid #0a0a0a; border-right: none; }
+  .disciplines { grid-template-columns: repeat(2, 1fr); }
+  .disc:nth-child(2) { border-right: none; }
+  .disc:nth-child(3), .disc:nth-child(4) { border-top: 2px solid #0a0a0a; }
+  .disc:nth-child(4) { border-right: none; }
 
   .work-group { padding: 2.5rem 1.25rem 3rem; }
   .thumb-grid { grid-template-columns: 1fr; }
@@ -977,7 +977,6 @@ body {
   .disc:nth-child(2) { border-right: none; }
   .disc:nth-child(3), .disc:nth-child(4) { border-top: 2px solid #0a0a0a; }
   .disc:nth-child(4) { border-right: none; }
-  .disc:nth-child(5) { grid-column: span 2; border-top: 2px solid #0a0a0a; border-right: none; }
 
   .carousel-card { width: 200px; height: 280px; }
   #photo-track .carousel-card { width: 300px; height: 200px; }
