@@ -14,8 +14,15 @@
     <span class="nav-logo">RB</span>
     <div class="nav-links">
       <a href="#work">Work</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#personal">About</a>
+      <div class="nav-contact-wrap">
+        <button class="nav-contact-btn" id="nav-contact-btn">Contact</button>
+        <div class="nav-contact-dropdown" id="nav-contact-dropdown">
+          <a href="PortfolioResume.pdf" target="_blank">Resume</a>
+          <a href="mailto:ramabhindi21@gmail.com">Email</a>
+          <a href="https://www.linkedin.com/in/ramabh/" target="_blank">LinkedIn</a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -45,8 +52,7 @@
     <div class="disc"><p class="disc-num">01</p><p class="disc-name">Brand Design</p></div>
     <div class="disc"><p class="disc-num">02</p><p class="disc-name">Illustration</p></div>
     <div class="disc"><p class="disc-num">03</p><p class="disc-name">Social Media</p></div>
-    <div class="disc"><p class="disc-num">04</p><p class="disc-name">Photo</p></div>
-    <div class="disc"><p class="disc-num">05</p><p class="disc-name">Motion</p></div>
+    <div class="disc"><p class="disc-num">04</p><p class="disc-name">Photography</p></div>
   </div>
 
   <!-- ═══════════════════════════════════════ WORK ═══════════════════════════════════════ -->
@@ -58,9 +64,9 @@
         <span class="group-num">01</span>
         <h2 class="group-title">Brand Design</h2>
       </div>
-      <div class="brand-grid">
+      <div class="thumb-grid thumb-grid--3">
 
-        <div class="thumb-card brand-featured" data-overlay="overlay-cravory">
+        <div class="thumb-card" data-overlay="overlay-cravory">
           <div class="thumb-img-wrap">
             <img src="MOCKUP_LANDING.jpg" alt="Cravory website">
             <div class="thumb-hover"><span class="see-more-text">See More →</span></div>
@@ -71,7 +77,7 @@
           </div>
         </div>
 
-        <div class="thumb-card brand-side" data-overlay="overlay-sweetstuff">
+        <div class="thumb-card" data-overlay="overlay-sweetstuff">
           <div class="thumb-img-wrap">
             <img src="sweetstuffcans.png" alt="Sweet Stuff cans">
             <div class="thumb-hover"><span class="see-more-text">See More →</span></div>
@@ -79,6 +85,17 @@
           <div class="thumb-label">
             <p class="thumb-name">Smirnoff Berry Blast</p>
             <p class="thumb-sub">Beverage Redesign</p>
+          </div>
+        </div>
+
+        <div class="thumb-card" data-overlay="overlay-ev">
+          <div class="thumb-img-wrap">
+            <img src="EVPortfolio1.jpg" alt="EV Charger Installation">
+            <div class="thumb-hover"><span class="see-more-text">See More →</span></div>
+          </div>
+          <div class="thumb-label">
+            <p class="thumb-name">EV Charger Home Installation</p>
+            <p class="thumb-sub">Freelance work and Brand Design for Marrast Contracting</p>
           </div>
         </div>
 
@@ -110,8 +127,7 @@
 
         <div class="thumb-card has-video-preview" data-overlay="overlay-doopy">
           <div class="thumb-img-wrap" style="background:#0d0d0d;">
-            <video class="thumb-preview-video" src="militiarydoop.mp4" muted loop playsinline preload="none"></video>
-            <span class="placeholder-initials">DS</span>
+            <video class="thumb-preview-video" src="militiarydoop.mp4" muted loop playsinline preload="metadata"></video>
             <div class="thumb-hover"><span class="see-more-text">See More →</span></div>
           </div>
           <div class="thumb-label">
@@ -133,8 +149,7 @@
 
         <div class="thumb-card has-video-preview" data-overlay="overlay-sixstar">
           <div class="thumb-img-wrap" style="background:#1a0808;">
-            <video class="thumb-preview-video" src="globalwarmingvideo.mp4" muted loop playsinline preload="none"></video>
-            <span class="placeholder-initials">6★</span>
+            <video class="thumb-preview-video" src="globalwarmingvideo.mp4" muted loop playsinline preload="metadata"></video>
             <div class="thumb-hover"><span class="see-more-text">See More →</span></div>
           </div>
           <div class="thumb-label">
@@ -247,7 +262,7 @@
   </div>
 
   <!-- Sweet Stuff -->
-  <div class="proj-overlay" id="overlay-sweetstuff">
+  <div class="proj-overlay proj-overlay--case-study" id="overlay-sweetstuff">
     <div class="overlay-topbar">
       <button class="overlay-back">← Back</button>
       <div class="overlay-meta">
@@ -255,16 +270,19 @@
         <p>Beverage Redesign</p>
       </div>
     </div>
-    <div class="overlay-stage">
-      <div class="overlay-slides" id="sweetstuff-slides">
-        <div class="overlay-slide is-active"><img src="sweetstuffcans.png" alt="Sweet Stuff cans"></div>
-        <div class="overlay-slide pdf-loading-slide" id="pdf-loading-slot">
+    <div class="case-study-body">
+      <div class="case-study-text">
+        <p class="case-label">Design Rationale</p>
+        <p>This project reimagines Smirnoff Berry Blast as Smirnoff Sweet Stuff, a flavored vodka brand that fully embraces the product's defining characteristic: its sweetness. Rather than competing within traditional liquor branding, which often emphasizes heritage, craftsmanship, and sophistication, the redesign intentionally moves in the opposite direction. The new identity targets consumers aged 19–25, including university students and new vodka drinkers who prioritize flavor, nightlife, and social experiences over connoisseurship. The goal was to create a brand that is self-aware, playful, and unapologetically indulgent.</p>
+        <p>The visual identity was built around the concept of confidence through self-expression. Bright blue packaging, nostalgic popsicle imagery, and a custom "Sweet Stuff" wordmark create a bold shelf presence while reinforcing the brand's sweet and energetic personality. The redesign intentionally distances itself from luxury liquor aesthetics, instead leaning into vibrant colors, humor, and nightlife culture. This direction is supported by the tagline "It's so good though," which acknowledges criticism from traditional vodka enthusiasts while confidently embracing the product's appeal. Together, the visual language and messaging communicate a clear brand promise: enjoy what you enjoy, even if it stands out.</p>
+        <p>To support the rebrand, I developed a social media strategy focused on TikTok, Instagram Reels, and YouTube Shorts. Content centers around humorous, highly shareable scenarios in which characters experience exaggerated appearance changes after drinking Sweet Stuff, symbolizing the confidence to stand out. Across the campaign, individuals transform from ordinary or overly serious versions of themselves into bold, colorful personalities, often wearing the signature pink suit featured throughout the brand. This concept culminates in the "It's Too Good" campaign, where every advertisement ends with the phrase "It's too good to not notice." These visual transformations act as a metaphor for the product itself: a sweet, eye-catching vodka that proudly rejects convention and embraces being different.</p>
+      </div>
+      <div class="case-study-images" id="sweetstuff-slides">
+        <img src="sweetstuffcans.png" alt="Sweet Stuff cans">
+        <div class="pdf-loading-slide" id="pdf-loading-slot">
           <div class="pdf-loading"><p>Loading presentation…</p></div>
         </div>
       </div>
-      <button class="slide-arrow slide-arrow--prev">&#8592;</button>
-      <button class="slide-arrow slide-arrow--next">&#8594;</button>
-      <div class="slide-counter"><span class="sc-cur">1</span><span class="sc-sep"> / </span><span class="sc-tot">…</span></div>
     </div>
   </div>
 
@@ -301,6 +319,26 @@
       <button class="slide-arrow slide-arrow--prev">&#8592;</button>
       <button class="slide-arrow slide-arrow--next">&#8594;</button>
       <div class="slide-counter"><span class="sc-cur">1</span><span class="sc-sep"> / </span><span class="sc-tot">2</span></div>
+    </div>
+  </div>
+
+  <!-- EV Charger -->
+  <div class="proj-overlay proj-overlay--case-study" id="overlay-ev">
+    <div class="overlay-topbar">
+      <button class="overlay-back">← Back</button>
+      <div class="overlay-meta">
+        <h2>EV Charger Home Installation</h2>
+        <p>Freelance Brand Design — Marrast Contracting</p>
+      </div>
+    </div>
+    <div class="case-study-body">
+      <div class="case-study-text">
+        <p class="case-label">Project Overview</p>
+        <p>Freelance work and brand design for Marrast Contracting. Full case study coming soon.</p>
+      </div>
+      <div class="case-study-images">
+        <img src="EVPortfolio1.jpg" alt="EV Charger Installation">
+      </div>
     </div>
   </div>
 

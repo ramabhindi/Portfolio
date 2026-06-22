@@ -1,11 +1,21 @@
 // ═══════════════════════════════════════════════════════
-//  NAV — fade on scroll
+//  NAV — fade on scroll + contact dropdown
 // ═══════════════════════════════════════════════════════
 (function () {
   const nav = document.querySelector('.nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('is-scrolled', window.scrollY > 40);
   }, { passive: true });
+
+  const btn      = document.getElementById('nav-contact-btn');
+  const dropdown = document.getElementById('nav-contact-dropdown');
+  if (btn && dropdown) {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('is-open');
+    });
+    document.addEventListener('click', () => dropdown.classList.remove('is-open'));
+  }
 })();
 
 // ═══════════════════════════════════════════════════════
