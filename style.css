@@ -240,19 +240,87 @@ body {
 
 /* ───── BRAND DESIGN GRID (Group 1) ───── */
 
-.brand-grid {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  grid-template-rows: 1fr;
-  gap: 1.5rem;
-  align-items: start;
+.brand-split {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 4px;
 }
-.brand-featured .thumb-img-wrap { aspect-ratio: 16 / 10; }
-.brand-side .thumb-img-wrap     { aspect-ratio: 4 / 5; }
+
+.brand-split-panel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+.brand-split-panel:first-child {
+  clip-path: polygon(0 0, 62% 0, 38% 100%, 0 100%);
+}
+.brand-split-panel--right {
+  clip-path: polygon(62% 0, 100% 0, 100% 100%, 38% 100%);
+}
+.brand-split-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  pointer-events: none;
+}
+.brand-split-panel:hover img { transform: scale(1.04); }
+
+.brand-split-panel .thumb-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(10,10,10,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.brand-split-panel:hover .thumb-hover { opacity: 1; }
+
+.brand-split-label {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  z-index: 2;
+  pointer-events: none;
+}
+.brand-split-label--right {
+  left: auto;
+  right: 1.25rem;
+  text-align: right;
+}
+.brand-split-label .thumb-name {
+  color: #f5f0e8;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+}
+.brand-split-label .thumb-sub {
+  color: rgba(245,240,232,0.7);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+
+.brand-split-line {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
 
 @media (max-width: 768px) {
-  .brand-grid { grid-template-columns: 1fr; }
-  .brand-side .thumb-img-wrap { aspect-ratio: 4 / 3; }
+  .brand-split { height: auto; }
+  .brand-split-panel {
+    position: relative;
+    clip-path: none;
+    height: 220px;
+  }
+  .brand-split-panel--right { margin-top: 1rem; }
+  .brand-split-line { display: none; }
+  .brand-split-label--right { left: 1.25rem; right: auto; text-align: left; }
 }
 
 /* ───── THUMBNAIL CARDS (Groups 1 & 3) ───── */
