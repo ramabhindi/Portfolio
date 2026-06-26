@@ -393,6 +393,23 @@ body {
   height: 300px;
 }
 
+/* Misc/sandbox cards — landscape, clickable */
+#misc-track .carousel-card {
+  width: 440px;
+  height: 300px;
+  cursor: pointer;
+}
+
+.group-header--misc { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+.misc-subtitle {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(245,240,232,0.45);
+  font-weight: 700;
+  margin-top: 0.3rem;
+}
+
 .carousel-card.is-active {
   box-shadow:
     0 12px 40px rgba(0,0,0,0.5),

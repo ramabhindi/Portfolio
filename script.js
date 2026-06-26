@@ -220,6 +220,24 @@ const photos = [
 new PhysicsCarousel({ viewportId: 'illus-carousel', trackId: 'illus-track', titleId: 'illus-title', descId: 'illus-desc', items: illustrations });
 new PhysicsCarousel({ viewportId: 'photo-carousel', trackId: 'photo-track', titleId: 'photo-title', descId: 'photo-desc', items: photos });
 
+// ── MISC / SANDBOX CAROUSEL ──
+const miscTitles = ['A JACK OF ALL TRADES', 'THE SANDBOX', 'EXPERIMENTS'];
+document.getElementById('misc-title').textContent = miscTitles[Math.floor(Math.random() * miscTitles.length)];
+
+const misc = [
+  // items will be added here — each can have: { src, title, desc, url }
+];
+
+const miscCarousel = new PhysicsCarousel({ viewportId: 'misc-carousel', trackId: 'misc-track', titleId: 'misc-card-title', descId: 'misc-card-desc', items: misc });
+
+// Click to open URL on active card
+document.getElementById('misc-track').addEventListener('click', () => {
+  const activeCard = document.querySelector('#misc-track .carousel-card.is-active');
+  if (!activeCard) return;
+  const idx = parseInt(activeCard.dataset.idx, 10);
+  if (misc[idx] && misc[idx].url) window.open(misc[idx].url, '_blank');
+});
+
 // ═══════════════════════════════════════════════════════
 //  PERSONAL SECTION — synced photo + text rotation
 // ═══════════════════════════════════════════════════════
