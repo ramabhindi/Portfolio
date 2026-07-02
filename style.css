@@ -125,6 +125,18 @@ body {
 .hero-title .line2 { color: #D85A30; display: block; }
 .hero-title .line3 { color: #f5f0e8; display: block; }
 
+/* Misc title letters — hover wobble + random color fade */
+.misc-letter {
+  display: inline-block;
+  cursor: default;
+  color: #f5f0e8;
+  transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1), color 0.5s ease;
+}
+.misc-letter:hover {
+  transform: translateY(-8px) rotate(-0.5deg) scale(1.08);
+  transition: transform 0.25s cubic-bezier(0.23, 1, 0.32, 1), color 0s;
+}
+
 /* Letter animation — piano key intro + hover wobble */
 .letter {
   display: inline-block;

@@ -222,7 +222,25 @@ new PhysicsCarousel({ viewportId: 'photo-carousel', trackId: 'photo-track', titl
 
 // ── MISC / SANDBOX CAROUSEL ──
 const miscTitles = ['A JACK OF ALL TRADES', 'THE SANDBOX', 'EXPERIMENTS'];
-document.getElementById('misc-title').textContent = miscTitles[Math.floor(Math.random() * miscTitles.length)];
+const miscTitleEl = document.getElementById('misc-title');
+const chosenTitle = miscTitles[Math.floor(Math.random() * miscTitles.length)];
+
+const randomHoverColors = ['#FF6B6B','#FFD93D','#6BCBFF','#A8FF78','#FF9A3C','#D4A5FF','#FF8ED4','#00E5CC'];
+
+miscTitleEl.innerHTML = chosenTitle.split('').map(ch => {
+  if (ch === ' ') return '<span style="display:inline-block;width:0.3em"> </span>';
+  return `<span class="misc-letter">${ch}</span>`;
+}).join('');
+
+miscTitleEl.querySelectorAll('.misc-letter').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    const color = randomHoverColors[Math.floor(Math.random() * randomHoverColors.length)];
+    el.style.color = color;
+  });
+  el.addEventListener('mouseleave', () => {
+    el.style.color = '';
+  });
+});
 
 const misc = [
   { src: 'EVPortfolio1.jpg', title: 'EV Charger Home Installation', desc: 'Freelance brand design for Marrast Contracting.', overlay: 'overlay-ev' },
