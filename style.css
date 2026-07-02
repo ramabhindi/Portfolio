@@ -284,7 +284,7 @@ body {
   object-position: right center;
 }
 .brand-split-panel img.img-contain--cravory {
-  object-position: 20% center;
+  object-position: left center;
 }
 .brand-split-panel:hover img { transform: scale(1.04); }
 
