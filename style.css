@@ -301,6 +301,12 @@ body {
   color: rgba(245,240,232,0.7);
   text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
+.brand-split-name {
+  transition: font-size 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.brand-split-panel:hover .brand-split-name {
+  font-size: 1.35em;
+}
 
 .brand-split-line {
   position: absolute;
