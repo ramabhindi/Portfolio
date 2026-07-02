@@ -369,13 +369,6 @@ document.addEventListener('keydown', e => {
     next.disabled   = current === lynkSlides.length - 1;
   }
 
-  // Reset to slide 0 each time the overlay opens
-  document.getElementById('overlay-lynk')
-    .addEventListener('transitionend', () => {
-      const isOpen = document.getElementById('overlay-lynk').classList.contains('is-open');
-      if (isOpen && current !== 0) goTo(0);
-    });
-
   prev.addEventListener('click', () => goTo(current - 1));
   next.addEventListener('click', () => goTo(current + 1));
   goTo(0);
