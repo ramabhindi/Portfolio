@@ -205,6 +205,9 @@ const illustrations = [
   { src: 'yours truly.jpg',       title: 'Yours Truly',        desc: 'A cinematic silhouette — smoke, red, and attitude in a parked car.' },
   { src: 'mona lisa.jpg',         title: 'Mona Lisa',          desc: 'A reimagining of the iconic painting — vandalized, spotlit, and questioned.' },
   { src: 'voodoo.jpg',            title: 'Voodoo',             desc: 'A voodoo doll in a lived-in room — detail-rich and darkly playful.' },
+  { src: 'SECURITY.png',          title: 'Security',           desc: 'Digital illustration — bold and graphic.' },
+  { src: 'nav.png',               title: 'Nav',                desc: 'Digital illustration — composition and line.' },
+  { src: 'suntree.png',           title: 'Sun Tree',           desc: 'Digital illustration — nature and light.' },
 ];
 
 // Photography data
