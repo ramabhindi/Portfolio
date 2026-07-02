@@ -334,6 +334,54 @@ document.addEventListener('keydown', e => {
 });
 
 // ═══════════════════════════════════════════════════════
+//  LYNK — multi-part figma navigator
+// ═══════════════════════════════════════════════════════
+(function () {
+  const lynkSlides = [
+    {
+      src:   'https://embed.figma.com/design/jExaSykpaDBJe65JX91AR6/Prototype?node-id=0-1&embed-host=share',
+      label: 'LYNK - Mobile App Prototype and Design System',
+    },
+    {
+      src:   'https://embed.figma.com/board/wCKpD8Tn2smNDCnhR5EkKq/GBDA-210-Whiteboard?node-id=0-1&embed-host=share',
+      label: 'LYNK - Process Work',
+    },
+    {
+      src:   'https://embed.figma.com/board/hfr0c4CUbVpFvstwP0NnOl/GBDA210-Assignment-2?node-id=0-1&embed-host=share',
+      label: 'LYNK - Problem Statement and Storyboarding',
+    },
+  ];
+
+  let current = 0;
+  const iframe  = document.getElementById('lynk-iframe');
+  const label   = document.getElementById('lynk-label');
+  const openBtn = document.getElementById('lynk-open');
+  const prev    = document.getElementById('lynk-prev');
+  const next    = document.getElementById('lynk-next');
+
+  function goTo(idx) {
+    current = (idx + lynkSlides.length) % lynkSlides.length;
+    const slide = lynkSlides[current];
+    iframe.src      = slide.src;
+    label.textContent = slide.label;
+    openBtn.href    = slide.src;
+    prev.disabled   = current === 0;
+    next.disabled   = current === lynkSlides.length - 1;
+  }
+
+  // Reset to slide 0 each time the overlay opens
+  document.getElementById('overlay-lynk')
+    .addEventListener('transitionend', () => {
+      const isOpen = document.getElementById('overlay-lynk').classList.contains('is-open');
+      if (isOpen && current !== 0) goTo(0);
+    });
+
+  prev.addEventListener('click', () => goTo(current - 1));
+  next.addEventListener('click', () => goTo(current + 1));
+  goTo(0);
+})();
+
+// ═══════════════════════════════════════════════════════
 //  SLIDESHOW (dynamic — always re-reads slides from DOM)
 // ═══════════════════════════════════════════════════════
 function initSlideshow(overlay) {

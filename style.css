@@ -1016,6 +1016,29 @@ body {
 }
 .figma-open-link:hover { color: #f5f0e8; }
 
+.lynk-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+}
+.lynk-nav-btn {
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #f5f0e8;
+  background: none;
+  border: 1px solid rgba(245,240,232,0.25);
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+.lynk-nav-btn:hover { background: #f5f0e8; color: #0a0a0a; }
+.lynk-nav-btn:disabled { opacity: 0.25; cursor: default; pointer-events: none; }
+
 /* ===== PDF LOADING STATE ===== */
 .pdf-loading-slide { pointer-events: none; }
 .pdf-loading {
