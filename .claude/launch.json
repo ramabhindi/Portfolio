@@ -6,6 +6,18 @@
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server", "3000"],
       "port": 3000
+    },
+    {
+      "name": "doopfight",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "C:\\Users\\ender\\AppData\\Local\\Temp\\claude\\C--Users-ender-OneDrive-Desktop-Portfolio\\823ab2be-7596-471e-be2e-42a83cf50cf2\\scratchpad\\serve-doopfight.ps1"
+      ],
+      "port": 8420
     }
   ]
 }
