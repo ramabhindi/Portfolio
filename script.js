@@ -217,7 +217,14 @@ const photos = [
   { src: 'Hasan.jpg',          title: 'Hasan',            desc: 'Portrait — natural light, candid moment.' },
   { src: 'MACRO.JPG',          title: 'Macro',            desc: 'Close-up study — texture and light.' },
   { src: 'PRODUCT.JPG',        title: 'Product',          desc: 'Product photography — clean and deliberate.' },
-  { src: 'StatuesinStrat.jpg', title: 'Statues in Strat', desc: 'War memorial and Canadian flag — Stratford, Ontario.' },
+  { src: 'StatuesinStrat.jpg',    title: 'Statues in Strat',   desc: 'War memorial and Canadian flag — Stratford, Ontario.' },
+  { src: 'NAS PHOTOSHOOT.JPG',   title: 'NAS Photoshoot',     desc: 'Editorial portrait shoot.' },
+  { src: 'PORSCHE.JPG',          title: 'Porsche',            desc: 'Automotive photography.' },
+  { src: 'LOWLIGHT AUDI.JPG',    title: 'Low Light Audi',     desc: 'Low light automotive photography.' },
+  { src: 'WALKBY.JPG',           title: 'Walk By',            desc: 'Street photography — caught in motion.' },
+  { src: 'OLDSTYLE.JPG',         title: 'Old Style',          desc: 'Classic tones and timeless framing.' },
+  { src: 'CHALLENGER.JPG',       title: 'Challenger',         desc: 'Automotive photography — muscle and presence.' },
+  { src: 'HELLYEAH.JPG',         title: 'Hell Yeah',          desc: 'Bold shot with attitude.' },
 ];
 
 new PhysicsCarousel({ viewportId: 'illus-carousel', trackId: 'illus-track', titleId: 'illus-title', descId: 'illus-desc', items: illustrations });
