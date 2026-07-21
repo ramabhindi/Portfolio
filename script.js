@@ -253,22 +253,45 @@ miscTitleEl.querySelectorAll('.misc-letter').forEach(el => {
 });
 
 const misc = [
-  { src: 'EVPortfolio1.jpg',        title: 'EV Charger Home Installation', desc: 'Freelance brand design for Marrast Contracting.',  overlay: 'overlay-ev' },
-  { src: 'Doopfightthumbnail.png',  title: 'DoopFight',                    desc: '2D Fighting game, A work in progress',             url: 'https://ramabhindi.github.io/DoopFight/' },
+  { src: 'EVPortfolio1.jpg',        title: 'EV Charger Home Installation', desc: 'Freelance brand design for Marrast Contracting.' },
+  { src: 'Doopfightthumbnail.png',  title: 'DoopFight',                    desc: '2D Fighting game, A work in progress. Click the thumbnail to play!', url: 'https://ramabhindi.github.io/DoopFight/' },
 ];
 
-const miscCarousel = new PhysicsCarousel({ viewportId: 'misc-carousel', trackId: 'misc-track', titleId: 'misc-card-title', descId: 'misc-card-desc', items: misc });
+// Render misc as a simple clickable grid (not draggable)
+(function () {
+  const track   = document.getElementById('misc-track');
+  const titleEl = document.getElementById('misc-card-title');
+  const descEl  = document.getElementById('misc-card-desc');
 
-// Click to open overlay or URL on active card
-document.getElementById('misc-track').addEventListener('click', () => {
-  const activeCard = document.querySelector('#misc-track .carousel-card.is-active');
-  if (!activeCard) return;
-  const idx = parseInt(activeCard.dataset.idx, 10);
-  const item = misc[idx];
-  if (!item) return;
-  if (item.overlay) openOverlay(item.overlay);
-  else if (item.url) window.open(item.url, '_blank');
-});
+  misc.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'misc-card';
+
+    const img = document.createElement('img');
+    img.src = item.src;
+    img.alt = item.title;
+    img.draggable = false;
+    card.appendChild(img);
+
+    if (item.url) {
+      card.classList.add('misc-card--clickable');
+      card.addEventListener('click', () => window.open(item.url, '_blank'));
+    }
+
+    card.addEventListener('mouseenter', () => {
+      titleEl.textContent = item.title;
+      descEl.textContent  = item.desc;
+    });
+
+    track.appendChild(card);
+  });
+
+  // Show first item info by default
+  if (misc[0]) {
+    titleEl.textContent = misc[0].title;
+    descEl.textContent  = misc[0].desc;
+  }
+})();
 
 // ═══════════════════════════════════════════════════════
 //  PERSONAL SECTION — synced photo + text rotation
