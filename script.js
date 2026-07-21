@@ -253,7 +253,8 @@ miscTitleEl.querySelectorAll('.misc-letter').forEach(el => {
 });
 
 const misc = [
-  { src: 'EVPortfolio1.jpg', title: 'EV Charger Home Installation', desc: 'Freelance brand design for Marrast Contracting.', overlay: 'overlay-ev' },
+  { src: 'EVPortfolio1.jpg',        title: 'EV Charger Home Installation', desc: 'Freelance brand design for Marrast Contracting.',  overlay: 'overlay-ev' },
+  { src: 'Doopfightthumbnail.png',  title: 'DoopFight',                    desc: '2D Fighting game, A work in progress',             url: 'https://ramabhindi.github.io/DoopFight/' },
 ];
 
 const miscCarousel = new PhysicsCarousel({ viewportId: 'misc-carousel', trackId: 'misc-track', titleId: 'misc-card-title', descId: 'misc-card-desc', items: misc });
